@@ -23,11 +23,12 @@ exports.setNotNullColumn = function (db, table_name, column_name) {
         return console.log(chalk.green('✓'), `Trường ${table_name}.${column_name} đã được set thành NOT NULL`);
     })
 }
-exports.insertTrainer_Course=function (db,course_id,trainer_id) {
+exports.insertTrainer_Course=function (db,table_name,course_id,trainer_id) {
     // return db.query(script.insertTrainerCourse,[course_id,trainer_id]).then(function () {
     //     return console.log(chalk.green('✓'), `Insert ${trainer_id},${course_id} thành công`);
     // })
     return promise= new Promise(function (resolve,reject) {
-        resolve(db.query(script.insertTrainerCourse,[course_id, trainer_id]));
+        console.log(script.insertTrainerCourse,[table_name,course_id,trainer_id]);
+        resolve(db.query(script.insertTrainerCourse,[table_name,course_id, trainer_id]) + console.log(chalk.green('✓'), `Insert ${trainer_id},${course_id} thành công`));
     })
 }

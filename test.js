@@ -10,7 +10,7 @@ var db = pgp({
 var Task = require('./task/trainer_course')(db);
 
 Task.then(function () {
-    process.exit(0);
+    // process.exit(0);
 }).catch(function (err) {
     console.error(chalk.bold.red(err));
     process.exit(1);
